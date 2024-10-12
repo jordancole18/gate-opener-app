@@ -1,23 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [gateStatus, setGateStatus] = useState();
+
+  const triggerGate = () => {
+    fetch('http://72.49.53.158/api/open', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'X-API-KEY': process.env.REACT_APP_API_KEY,
+      }
+    })
+    .then(res => res.json())
+      .then(data => {
+        setGateStatus("Gate has been triggered");
+      })
+      .catch(err => {
+        setGateStatus("Gate has failed to trigger")
+      });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header className="gate-opener-container">
+        <button className="gate-opener-btn" onClick={triggerGate}>Open/Close Gate</button>
+        {
+          gateStatus && <p>{gateStatus}</p>
+        }
       </header>
     </div>
   );
