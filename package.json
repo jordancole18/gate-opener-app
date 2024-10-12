@@ -27,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-icons": "npx pwa-asset-generator ./public/base-lock-icon.png ./public/icons -b \"linear-gradient(to right, #4e65f1 0%, #5a3ddf 100%)\""
   },
   "eslintConfig": {
     "extends": [
