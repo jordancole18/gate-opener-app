@@ -6,7 +6,7 @@ function App() {
   const [gateStatus, setGateStatus] = useState();
 
   const triggerGate = () => {
-    fetch('http://72.49.53.158/api/open', {
+    fetch('/api/open', {
       method: 'POST',
       mode: 'cors',
       headers: {
