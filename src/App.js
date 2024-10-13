@@ -15,7 +15,11 @@ function App() {
     })
     .then(res => res.json())
       .then(data => {
-        setGateStatus("Gate has been triggered");
+        if (data.success) {
+          setGateStatus("Gate has been triggered");
+        } else {
+          setGateStatus("Gate has failed to trigger");
+        }
       })
       .catch(err => {
         setGateStatus("Gate has failed to trigger")
