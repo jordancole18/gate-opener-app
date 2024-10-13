@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import netlifyIdentity from 'netlify-identity-widget'
+
+netlifyIdentity.init()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
