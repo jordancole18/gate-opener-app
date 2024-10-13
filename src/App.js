@@ -7,6 +7,10 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const triggerGate = () => {
+    if (loading) {
+      return;
+    }
+
     setLoading(true);
     fetch('/api/open', {
       method: 'POST',
