@@ -8,7 +8,8 @@
 }
 
 .gate-opener-btn {
-    background-color: #4CAF50;
+    /* linear-gradient(to right, #4e65f1 0%, #5a3ddf 100%) */
+    background: linear-gradient(to right, #4e65f1 0%, #5a3ddf 100%);
     border: none;
     color: white;
     text-align: center;
@@ -24,4 +25,14 @@
     font-family: 'Roboto', sans-serif;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     height: 150px;
+}
+
+body {
+  /* dark theme */
+  background-color: #282c34;
+}
+
+p {
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
