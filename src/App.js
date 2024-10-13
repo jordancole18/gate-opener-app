@@ -14,11 +14,11 @@ function App() {
         if (user) {
             setUser(JSON.parse(user));
         } else {
-            loginUser();
+            netlifyIdentity.open();
         }
         netlifyIdentity.on('login', (user) => setUser(user, loginUser()));
-        netlifyIdentity.on('logout', (user) => setUser(user, logoutUser()));
-    }, []);
+        netlifyIdentity.on('logout', (user) => setUser(null, logoutUser()));
+    }, [user, setUser]);
 
     const triggerGate = () => {
         if (loading) {
